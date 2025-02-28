@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\trupt\\source\\repos\\WebAPIProject\\WebAPIProject\\WebAPIProject.csproj": {}
+    "C:\\Users\\trupt\\Source\\Repos\\MasterSettings\\WebAPIProject\\WebAPIProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\trupt\\source\\repos\\WebAPIProject\\WebAPIProject\\WebAPIProject.csproj": {
+    "C:\\Users\\trupt\\Source\\Repos\\MasterSettings\\WebAPIProject\\WebAPIProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\trupt\\source\\repos\\WebAPIProject\\WebAPIProject\\WebAPIProject.csproj",
+        "projectUniqueName": "C:\\Users\\trupt\\Source\\Repos\\MasterSettings\\WebAPIProject\\WebAPIProject.csproj",
         "projectName": "WebAPIProject",
-        "projectPath": "C:\\Users\\trupt\\source\\repos\\WebAPIProject\\WebAPIProject\\WebAPIProject.csproj",
+        "projectPath": "C:\\Users\\trupt\\Source\\Repos\\MasterSettings\\WebAPIProject\\WebAPIProject.csproj",
         "packagesPath": "C:\\Users\\trupt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\trupt\\source\\repos\\WebAPIProject\\WebAPIProject\\obj\\",
+        "outputPath": "C:\\Users\\trupt\\Source\\Repos\\MasterSettings\\WebAPIProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
