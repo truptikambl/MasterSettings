@@ -1,0 +1,636 @@
+[
+  {
+    "ContainingType": "CompanyController",
+    "Method": "GetCompaniesByDepartment",
+    "RelativePath": "api/Company/companies/by-department/{departmentId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "departmentId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CompanyController",
+    "Method": "GetCompanyCountGroupedByDepartment",
+    "RelativePath": "api/Company/company-count/grouped-by-department",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CompanyController",
+    "Method": "DeleteCompany",
+    "RelativePath": "api/Company/delete",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "CompanyDeleteRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CompanyDeleteRequest",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CompanyController",
+    "Method": "DeleteDepartment",
+    "RelativePath": "api/Company/DeleteDepartment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "DeleteRequestDep",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DeleteRequestDep",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CompanyController",
+    "Method": "GetAllCompanies",
+    "RelativePath": "api/Company/GetAllCompanies",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "PaginationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "PaginatedResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CompanyController",
+    "Method": "SaveCompany",
+    "RelativePath": "api/Company/SaveCompany",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "companyRequest",
+        "Type": "CompanyPostRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CompanySaveResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CompanyController",
+    "Method": "GetTop5CompaniesByDepartment",
+    "RelativePath": "api/Company/top-5-companies",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPIProject.Controllers.DyeStuffController",
+    "Method": "DeleteDyestuff",
+    "RelativePath": "api/DyeStuff/delete",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebAPIProject.Core.DTOs.DyeStuffDeleteRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebAPIProject.Core.DTOs.DyeStuffDeleteRequest",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebAPIProject.Controllers.DyeStuffController",
+    "Method": "GetAllDyeStuff",
+    "RelativePath": "api/DyeStuff/GetAllDyeStuff",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebAPIProject.Core.DTOs.DyeStuffPaginatedRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebAPIProject.Core.DTOs.DyeStuffPaginatedResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebAPIProject.Controllers.DyeStuffController",
+    "Method": "Saveorupdate",
+    "RelativePath": "api/DyeStuff/SaveDyeStuff",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Request",
+        "Type": "WebAPIProject.Core.DTOs.DyeStuffRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebAPIProject.Core.DTOs.DyeStuffSaveResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebAPIProject.Controllers.DyeTypeController",
+    "Method": "DeleteDyeType",
+    "RelativePath": "api/DyeType/deleteDyeType",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebAPIProject.Core.DTOs.DyeTypeDeleteRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebAPIProject.Core.DTOs.DyeTypeDeleteRequest",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebAPIProject.Controllers.DyeTypeController",
+    "Method": "GetNextDyeTypeCode",
+    "RelativePath": "api/DyeType/DyeTypeCode",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPIProject.Controllers.DyeTypeController",
+    "Method": "GetAllDyeType",
+    "RelativePath": "api/DyeType/GetAllDyeType",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebAPIProject.Core.DTOs.DyeTypePaginatedRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebAPIProject.Core.DTOs.DyeTypePaginatedResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebAPIProject.Controllers.DyeTypeController",
+    "Method": "SaveDyeType",
+    "RelativePath": "api/DyeType/SaveDyeType",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Request",
+        "Type": "WebAPIProject.Core.DTOs.DyeTypesaveRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebAPIProject.Core.DTOs.DyeTypesaveResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebAPIProject.Controllers.EmailController",
+    "Method": "SendEmail",
+    "RelativePath": "api/email/send-email",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebAPIProject.Core.DTOs.SendEmailRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPIProject.Controllers.FabricController",
+    "Method": "DeleteFabric",
+    "RelativePath": "api/Fabric/delete",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebAPIProject.Core.DTOs.FabricDetails\u002BFabricDeleteRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebAPIProject.Core.DTOs.FabricDetails\u002BFabricDeleteRequest",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebAPIProject.Controllers.FabricController",
+    "Method": "Deleteconstruction",
+    "RelativePath": "api/Fabric/DeleteConstruction",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebAPIProject.Core.DTOs.Constructiondto\u002BConstructionDeleteRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebAPIProject.Core.DTOs.Constructiondto\u002BConstructionDeleteRequest",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebAPIProject.Controllers.FabricController",
+    "Method": "GetAllConstruction",
+    "RelativePath": "api/Fabric/GetAllConstruction",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebAPIProject.Core.DTOs.Constructiondto\u002BConstructionPaginationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebAPIProject.Core.DTOs.Constructiondto\u002BConstructionPaginatedResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebAPIProject.Controllers.FabricController",
+    "Method": "GetAllFabric",
+    "RelativePath": "api/Fabric/GetAllFabric",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebAPIProject.Core.DTOs.FabricDetails\u002BFabricPaginationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebAPIProject.Core.DTOs.FabricDetails\u002BFabricPaginatedResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebAPIProject.Controllers.FabricController",
+    "Method": "SaveConstruction",
+    "RelativePath": "api/Fabric/SaveConstruction",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fabricRequest",
+        "Type": "WebAPIProject.Core.DTOs.Constructiondto\u002BConstructionRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebAPIProject.Core.DTOs.Constructiondto\u002BConstructionSaveResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebAPIProject.Controllers.FabricController",
+    "Method": "SaveFabric",
+    "RelativePath": "api/Fabric/SaveFabric",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fabricRequest",
+        "Type": "WebAPIProject.Core.DTOs.FabricDetails\u002BFabricRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebAPIProject.Core.DTOs.FabricDetails\u002BFabricSaveResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebAPIProject.Controllers.SymbolCategoryController",
+    "Method": "DeleteFabric",
+    "RelativePath": "api/SymbolCategory/delete",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebAPIProject.Core.DTOs.SymbolCategoryDeleteRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebAPIProject.Core.DTOs.SymbolCategoryDeleteRequest",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebAPIProject.Controllers.SymbolCategoryController",
+    "Method": "DeleteIndividualCareSymbol",
+    "RelativePath": "api/SymbolCategory/deleteIndividualCareSymbol",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebAPIProject.Core.DTOs.IndividualCareSymbolDeleteRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebAPIProject.Core.DTOs.IndividualCareSymbolDeleteRequest",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebAPIProject.Controllers.SymbolCategoryController",
+    "Method": "GetAllIndividualCareSymbol",
+    "RelativePath": "api/SymbolCategory/GetAllIndividualCareSymbol",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebAPIProject.Core.DTOs.IndividualCareSymbolPaginationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebAPIProject.Core.DTOs.IndividualCareSymbolPaginatedResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebAPIProject.Controllers.SymbolCategoryController",
+    "Method": "GetAllFabric",
+    "RelativePath": "api/SymbolCategory/GetAllSymbolCategory",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebAPIProject.Core.DTOs.SymbolCategoryPaginatedRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebAPIProject.Core.DTOs.SymbolCategoryPaginatedResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebAPIProject.Controllers.SymbolCategoryController",
+    "Method": "SaveIndividualCareSymbol",
+    "RelativePath": "api/SymbolCategory/SaveIndividualCareSymbol",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Request",
+        "Type": "WebAPIProject.Core.DTOs.IndividualCareSymbolRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebAPIProject.Core.DTOs.IndividualCareSymbolSaveResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebAPIProject.Controllers.SymbolCategoryController",
+    "Method": "SymbolCategory",
+    "RelativePath": "api/SymbolCategory/SymbolCategory",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Request",
+        "Type": "WebAPIProject.Core.DTOs.SymbolCategoryRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebAPIProject.Core.DTOs.SymbolCategorySaveResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
