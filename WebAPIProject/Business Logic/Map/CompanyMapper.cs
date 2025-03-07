@@ -7,7 +7,13 @@ public class CompanyMapper
         if (request == null)
         {
             return null;
-        }
+        } 
+
+
+
+
+
+
 
         return new Company
         {
