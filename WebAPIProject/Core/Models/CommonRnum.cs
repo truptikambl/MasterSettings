@@ -14,4 +14,21 @@
         AlreadyInUse = 5,
         Error = 6
     }
+
+    namespace MyWebApi.Core.Model
+    {
+        public class NotificationType
+        {
+
+        }
+
+        public enum Notify
+        {
+            CompanyAdded = 1,
+            DepartmentCreated = 2,
+            DyeStuffCreated = 3,
+            EmailSentSuccessfully = 4
+        }
+    }
+
 }

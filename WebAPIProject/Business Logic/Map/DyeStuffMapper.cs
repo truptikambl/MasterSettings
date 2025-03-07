@@ -26,7 +26,7 @@ namespace WebAPIProject.Business_Logic.Map
         {
             entity.DyeStuffName = request.DyeStuffName.Trim();
             entity.UpdatedBy = userId;
-                entity.UpdatedDate= DateTime.UtcNow;
+            entity.UpdatedDate= DateTime.UtcNow;
             return entity;
         }
 

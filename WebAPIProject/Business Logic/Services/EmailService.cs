@@ -1,15 +1,18 @@
 ﻿using MailKit.Net.Smtp;
 using MailKit.Security;
 using MimeKit;
+using MyWebApi.Infrastructure.Repository___service;
 using RazorLight;
 using WebAPIProject.Contract.Repositories;
 using WebAPIProject.Contract.Service;
 using WebAPIProject.Core.DTOs;
+using WebAPIProject.Core.Models.MyWebApi.Core.Model;
 
 public class EmailService : IEmailService
 {
     private readonly IConfiguration _configuration;
     private readonly IEmailRepository _emailRepository;
+    private readonly INotificationService _notificationService;
 
     public EmailService(IConfiguration configuration, IEmailRepository emailRepository)
     {
@@ -82,6 +85,7 @@ public class EmailService : IEmailService
             response.IsSuccess = false;
             response.Message = $"Error: {ex.Message}";
         }
+        await _notificationService.CreateNotificationAsync(Notify.EmailSentSuccessfully, "Email Sent Successfully..");
 
         return response;
     }

@@ -1,18 +1,24 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MyWebApi.Infrastructure.Repository___service;
 using WebAPIProject.Contract.Service;
 using WebAPIProject.Core.Models;
+using WebAPIProject.Core.Models.MyWebApi.Core.Model;
 
 namespace WebAPIProject.Business_Logic.Services
 {
     public class CompanyService : ICompanyService
     {
         private readonly ICompanyRepository _companyRepository;
+
+        private readonly INotificationService _notificationService;
         private readonly CompanyMapper _mapper;
 
 
-        public CompanyService(ICompanyRepository companyRepository)
+
+        public CompanyService(ICompanyRepository companyRepository, INotificationService notificationService)
         {
             _companyRepository = companyRepository;
+            _notificationService = notificationService;
             _mapper = new CompanyMapper();
         }
 
@@ -39,13 +45,16 @@ namespace WebAPIProject.Business_Logic.Services
             {
                 var newCompany = _mapper.saveentity(request);
                 response.Id = await _companyRepository.Add(newCompany);
+
+               
             }
+
             else
             {
                 //var existingCompany = await _companyRepository.GetAllActive().Where(x => x.Id == request.Id).FirstOrDefaultAsync();
                 var existingCompany = (from c in _companyRepository.GetAllActive()
                                        where c.Id == request.Id
-                                       select c).FirstOrDefault(); 
+                                       select c).FirstOrDefault();
 
 
                 if (existingCompany == null)
@@ -57,11 +66,14 @@ namespace WebAPIProject.Business_Logic.Services
                 var updatedCompany = _mapper.UpdatedEntity(existingCompany, request);
                 response.Id = await _companyRepository.UpdateCompany(updatedCompany);
             }
+           
 
             await _companyRepository.SaveChangesAsync();
             response.Status = response.Id > 0 ? SaveStatus.Success : SaveStatus.Failed;
+            await _notificationService.CreateNotificationAsync(Notify.CompanyAdded, "A new company has been added.");
             return response;
         }
+
 
 
         public async Task<PaginatedResponse> GetAllCompany(PaginationRequest request)
@@ -74,7 +86,7 @@ namespace WebAPIProject.Business_Logic.Services
             if (!string.IsNullOrEmpty(request.Search))
             {
                 query = query.Where(c => c.CompanyName.Contains(request.Search));
-
+                
             }
             try
             {
@@ -123,53 +135,46 @@ namespace WebAPIProject.Business_Logic.Services
         {
             CompanyDeleteRequest response = new CompanyDeleteRequest { Id = request.Id };
 
-
             var company = await _companyRepository.GetById(request.Id);
-            if (company == null)
+            if (company == null || !company.IsActive)
             {
-                response.Status = SaveStatus.NotFound;
-                return response;
+                return new CompanyDeleteRequest { Id = request.Id, Status = SaveStatus.NotFound };
             }
 
-            if (!company.IsActive)
-            {
-                response.Status = SaveStatus.NotFound;
-                return response;
-            }
-            company.IsActive = request.IsActive;
+            company.IsActive = false;
             await _companyRepository.UpdateCompany(company);
+            await _companyRepository.SaveChangesAsync();
 
-
-            response.Status = SaveStatus.Success;
-            return response;
+            return new CompanyDeleteRequest { Id = request.Id, Status = SaveStatus.Success };
         }
-
-
 
         public async Task<DeleteRequestDep> DeleteDepartment(DeleteRequestDep requestDep)
         {
-
+            var response = new DeleteRequestDep { Id = requestDep.Id, Notifications = new List<NotificationResponse>() };
 
             var department = await _companyRepository.GetAllActiveDepartments()
-       .FirstOrDefaultAsync(d => d.Id == requestDep.Id);
+                .FirstOrDefaultAsync(d => d.Id == requestDep.Id);
 
             if (department == null)
                 return new DeleteRequestDep { Id = requestDep.Id, Status = SaveStatus.NotFound };
-
 
             if (await _companyRepository.GetAllActiveCompanies()
                 .AnyAsync(c => c.DepartmentId == requestDep.Id))
                 return new DeleteRequestDep { Id = requestDep.Id, Status = SaveStatus.AlreadyInUse };
 
-            if (!requestDep.IsActive)
+            if (!requestDep.IsActive) // Only delete if marked as inactive
             {
-                department.IsActive = requestDep.IsActive;
-
+                department.IsActive = false;
                 await _companyRepository.UpdateDepartment(department);
+                await _companyRepository.SaveChangesAsync(); // Ensure changes are saved
+
+    
             }
 
-            return new DeleteRequestDep { Id = requestDep.Id, Status = SaveStatus.Success };
+            response.Status = SaveStatus.Success;
+            return response;
         }
+
 
 
         // 2) Retrieve all companies for a specific DepartmentId
@@ -200,10 +205,16 @@ namespace WebAPIProject.Business_Logic.Services
         {
             return await _companyRepository.GetAllActive()
                 .OrderByDescending(c => c.Department.DepartmentName)
-                .Take(5)
+                .Take(5)         
                 .ToListAsync();
         }
+
+        
+
     }
+
+
 }
+
 
         

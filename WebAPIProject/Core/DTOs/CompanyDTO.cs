@@ -1,6 +1,5 @@
 ﻿
 using WebAPIProject.Core.Models;
-using static WebAPIProject.Core.DTOs.FabricDetails;
 
 public class Companydetails
 {
@@ -9,13 +8,8 @@ public class Companydetails
     public bool IsActive { get; set; } = true;
 
 
-}
-public class CompanydetailsPaginationResponse
-{
-    public List<Companydetails> Companydetails { get; set; }
+} 
 
-    public SaveStatus Result { get; set; }
-}
 
 
 public class CompanyPostRequest
@@ -27,11 +21,14 @@ public class CompanyPostRequest
     //  public SaveStatus Status { get; set; }
     public int? DepartmentId { get; set; }
     public string? DepartmentName { get; internal set; }
+    public int CreatedBy { get; internal set; }
 }
 public class CompanySaveResponse
 {
     public int Id { get; set; }
     public SaveStatus Status { get; set; }
+
+ 
 }
 
 public class PaginationRequest
@@ -62,24 +59,28 @@ public class PaginatedResponse
 public class CompanyDeleteRequest
 {
     public int Id { get; set; }
-
-    public bool IsActive { get; set; }
+    public bool IsActive { get; set; } 
     public SaveStatus Status { get; set; }
+
 }
 
 
-public class DeleteRequestDep
+public class DeleteRequestDep : CommonEnumResponse
 {
     public int Id { get; set; }
     public bool IsActive { get; set; } = true;
 
     public SaveStatus Status { get; set; }
-    public CommonEnum Enum { get; internal set; }
+
+    public List<NotificationResponse> Notifications { get; set; } = new List<NotificationResponse>();
+
 }
 
-public class CompanyCountByDepartmentDto
+
+public class NotificationResponse
 {
-    public int? DepartmentId { get; set; }
-    public int CompanyCount { get; set; }
-}
+    public int Id { get; set; }
+    public string Message { get; set; }
+    public DateTime CreatedAt { get; set; }
 
+}

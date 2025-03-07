@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using MyWebApi.Infrastructure.Repository___service;
 using WebAPIProject.Business_Logic.Map;
 using WebAPIProject.Business_Logic.Services;
 using WebAPIProject.Contract.Repositories;
@@ -27,7 +28,8 @@ builder.Services.AddControllers()
 
 builder.Services.AddScoped<ICompanyRepository, CompanyRepository>(); 
 builder.Services.AddScoped<ICompanyService, CompanyService>();
-builder.Services.AddScoped<CompanyMapper>();    
+builder.Services.AddScoped<CompanyMapper>();
+builder.Services.AddScoped<INotificationRepository, NotificationRepository>();
 builder.Services.AddScoped<IDyeStuffService, DyeStuffService>();
 builder.Services.AddScoped<IDyeStuffRepository, DyeStuffRepository>();
 builder.Services.AddScoped<IAPIUserContext, APIUserContext>();
@@ -50,6 +52,17 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<IDyeTypeRepository, DyeTypeRepository>();
 builder.Services.AddScoped<IDyeTypeService, DyeTypeService>();
 builder.Services.AddScoped<DyeTypeMapper>();
+
+
+builder.Services.AddScoped<IDyeingMathodsService, DyeingMathodsService>();
+builder.Services.AddScoped<IDyeingMethods, DyeingMethodRepository>();
+builder.Services.AddScoped<IAPIUserContext, APIUserContext>();
+builder.Services.AddScoped<DyeingMathodsMapper>();
+
+
+builder.Services.AddScoped<INotificationService, NotificationService>();
+builder.Services.AddScoped<INotificationRepository, NotificationRepository>();
+builder.Services.AddScoped<INotificationPublisher, NotificationPublisher>();
 
 builder.Services.AddControllers();
 ;

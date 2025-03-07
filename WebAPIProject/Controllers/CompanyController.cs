@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebAPIProject.Contract.Repositories;
 using WebAPIProject.Contract.Service;
 using WebAPIProject.Core.Models;
 
@@ -61,6 +62,12 @@ public class CompanyController : ControllerBase
     {
         return Ok(await _companyService.GetCompanyCountGroupedByDepartment());
     }
+
+   
+
+
+
+
 
 }
 

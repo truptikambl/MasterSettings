@@ -140,6 +140,94 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WebAPIProject.Controllers.DyeingMethodController",
+    "Method": "DeleteDyeingMethod",
+    "RelativePath": "api/DyeingMethod/deleteDyeingMathod",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebAPIProject.Core.DTOs.DyeMethodDeleteRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebAPIProject.Core.DTOs.DyeMethodDeleteRequest",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebAPIProject.Controllers.DyeingMethodController",
+    "Method": "GetNextDyeTypeCode",
+    "RelativePath": "api/DyeingMethod/DyeDyeingMathod",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPIProject.Controllers.DyeingMethodController",
+    "Method": "GetAllDyeingMethod",
+    "RelativePath": "api/DyeingMethod/GetAllDyeingMathod",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebAPIProject.Core.DTOs.DyeMethodPaginatedRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebAPIProject.Core.DTOs.DyeMethodPaginatedResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebAPIProject.Controllers.DyeingMethodController",
+    "Method": "SaveDyeingMethod",
+    "RelativePath": "api/DyeingMethod/SaveDyeingMathod",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Request",
+        "Type": "WebAPIProject.Core.DTOs.DyeMethodSaveRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebAPIProject.Core.DTOs.DyeMethodsaveResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "WebAPIProject.Controllers.DyeStuffController",
     "Method": "DeleteDyestuff",
     "RelativePath": "api/DyeStuff/delete",
@@ -476,6 +564,16 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "WebAPIProject.Controllers.NotificationController",
+    "Method": "GetNotifications",
+    "RelativePath": "api/Notification/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "WebAPIProject.Controllers.SymbolCategoryController",

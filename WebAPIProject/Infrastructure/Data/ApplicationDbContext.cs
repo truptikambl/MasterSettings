@@ -32,6 +32,10 @@ public partial class ApplicationDbContext : DbContext
 
     public DbSet<DyeType> DyeType { get; set; }
 
+    public DbSet<DyeingMethod> DyeingMethod { get; set; }
+
+    public DbSet<Notification> Notification { get; set; }
+
     
 
 
