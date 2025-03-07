@@ -8,13 +8,6 @@ public class CompanyMapper
         {
             return null;
         } 
-
-
-
-
-
-
-
         return new Company
         {
             CompanyName = request.CompanyName?.Trim(),
