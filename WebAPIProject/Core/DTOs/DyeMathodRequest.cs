@@ -3,50 +3,55 @@ using WebAPIProject.Core.Models;
 
 namespace WebAPIProject.Core.DTOs
 {
-
-    public class DyeTypesaveRequest
+    public class DyeMethodSaveRequest
     {
+
+
         public int Id { get; set; }
 
         [MaxLength(50)]
-        public string DyeTypeName { get; set; }
+        public string DyeingMethods { get; set; }
 
-        public string DyeTypeCode { get; set; }
+        public String DyeMethodCode { get; set; }
     }
 
-    public class DyeTypesaveResponse : CommonEnumResponse
+    public class DyeMethodsaveResponse : CommonEnumResponse
     {
         public int Id { get; set; }
 
         public bool IsActive { get; set; }
-      
+
+        public int CreatedBy { get; set; }
+        public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
+
     }
 
-    public class DyeTypePaginatedRequest 
-    { 
+    public class DyeMethodPaginatedRequest
+    {
         public int Index { get; set; } = 1;
         public int PageSize { get; set; } = 10;
         public string Search { get; set; } = "";
     }
 
-    public class DyeTypePaginatedResponse : CommonEnumResponse
+    public class DyeMethodPaginatedResponse : CommonEnumResponse
     {
         public int TotalRecords { get; set; }
         public int PageSize { get; set; }
         public int PageIndex { get; set; }
         public int PageCount { get; set; }
 
-        public List<DyeTypesaveRequest> Data { get; set; } = new List<DyeTypesaveRequest>();
-       
+        public List<DyeMethodSaveRequest> Data { get; set; } = new List<DyeMethodSaveRequest>();
+
 
     }
 
-    public class DyeTypeDeleteRequest : CommonEnumResponse 
+    public class DyeMethodDeleteRequest : CommonEnumResponse
     {
         public int Id { get; set; }
-        
+
         public bool IsActive { get; set; } = true;
 
     }
 
 }
+

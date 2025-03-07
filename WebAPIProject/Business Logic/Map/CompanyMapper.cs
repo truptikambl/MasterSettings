@@ -34,6 +34,8 @@ public class CompanyMapper
                 IsActive = dto.IsActive
             };
         
-    }
+        }
+
+   
 }
 

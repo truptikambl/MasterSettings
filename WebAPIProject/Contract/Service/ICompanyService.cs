@@ -17,6 +17,8 @@ namespace WebAPIProject.Contract.Service
         Task<List<Company>> GetCompaniesByDepartment(int departmentId);
         Task<List<dynamic>> GetCompanyCountGroupedByDepartment();
         Task<List<Company>> GetTop5CompaniesByDepartment();
+       
+        
 
     }
 }
